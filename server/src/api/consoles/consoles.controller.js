@@ -13,7 +13,7 @@ const getAll = async (req, res, next) => {
 const getOne = async (req, res, next) => {
     try {
         const { id } = req.params;
-        const console = await Console.findById(id).populate("games");
+        const console = await Console.findById(id).populate("videogames");
         res.status(200).json(console);
     } catch (error) {
         return next(error)
